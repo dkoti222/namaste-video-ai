@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NamasteVideo.ai — Cinema Homepage</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              black: '#090909',
+              dark: '#111111',
+              panel: '#151515',
+              border: '#242424',
+              borderLight: '#303030',
+              orange: '#E58C33',
+              orangeHover: '#d47f28',
+              white: '#FAFAFA',
+              muted: '#A3A3A3',
+              subtle: '#666666'
+            }
+          },
+          fontFamily: {
+            heading: ['"Plus Jakarta Sans"', 'sans-serif'],
+            sans: ['Inter', 'sans-serif']
+          },
+          borderRadius: {
+            'ctrl': '8px',
+            'media': '16px'
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    /* Architectural Perspective Grid confined to stage */
+    .cinema-grid {
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 32px 32px;
+      mask-image: radial-gradient(circle at center, black 40%, transparent 85%);
+      -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 85%);
+    }
+
+    /* Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      .motion-element, #hero-progress {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-brand-black text-brand-white font-sans antialiased selection:bg-brand-orange selection:text-brand-black">
+<!-- TOP NAVIGATION -->
+<header class="sticky top-0 z-50 bg-brand-black/90 backdrop-blur-md border-b border-brand-border">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+<!-- Wordmark & Badge -->
+<div class="flex items-center gap-4">
+<a class="flex items-center gap-2.5 group" href="#">
+<div class="w-8 h-8 rounded-ctrl bg-brand-orange flex items-center justify-center text-brand-black transition-transform group-hover:scale-95">
+<!-- Geometric Play Mark -->
+<svg class="w-4 h-4 fill-current ml-0.5" viewbox="0 0 16 16">
+<polygon points="4,2 14,8 4,14"></polygon>
+</svg>
+</div>
+<span class="font-heading font-extrabold text-xl tracking-tight text-brand-white">
+            NamasteVideo<span class="text-brand-orange">.ai</span>
+</span>
+</a>
+<span class="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-brand-panel border border-brand-border text-brand-muted">
+<span class="w-1.5 h-1.5 rounded-full bg-brand-orange"></span>
+          Internal Preview
+        </span>
+</div>
+<!-- Nav Anchors -->
+<nav class="hidden md:flex items-center gap-8 text-sm font-medium text-brand-muted">
+<a class="hover:text-brand-white transition-colors" href="#how-it-works">How it works</a>
+<a class="hover:text-brand-white transition-colors" href="#examples">Examples</a>
+<a class="hover:text-brand-white transition-colors" href="#workflow">Workflow</a>
+<a class="hover:text-brand-white transition-colors" href="#delivery">Delivery</a>
+<a class="hover:text-brand-white transition-colors" href="#faq">FAQ</a>
+</nav>
+<!-- Action -->
+<div class="flex items-center gap-4">
+<a class="text-sm font-medium text-brand-muted hover:text-brand-white transition-colors px-3 py-2" href="#signin">
+          Sign in
+        </a>
+<a class="inline-flex items-center justify-center px-4 py-2.5 rounded-ctrl bg-brand-orange text-brand-black font-semibold text-sm hover:bg-brand-orangeHover transition-all focus:outline-none focus:ring-2 focus:ring-brand-orange focus:ring-offset-2 focus:ring-offset-brand-black min-h-[44px]" href="#signin">
+          Create a video
+        </a>
+</div>
+</div>
+</header>
+<!-- HERO SECTION (Asymmetric, 1440px optimized, Visual Stage) -->
+<section class="relative overflow-hidden pt-12 pb-24 lg:pt-20 lg:pb-32 border-b border-brand-border">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+<!-- Left Column: Typography & Intent -->
+<div class="lg:col-span-6 flex flex-col justify-center">
+<!-- Broadened kicker metadata for general educational storytelling -->
+<div class="inline-flex items-center gap-2 text-xs font-semibold text-brand-muted uppercase tracking-wider mb-6">
+<span class="w-2 h-2 rounded-sm bg-brand-orange"></span>
+          Educational Concepts &amp; Visual Storytelling
+        </div>
+<!-- Huge Headline with Orange fragment -->
+<h1 class="font-heading font-extrabold text-5xl sm:text-6xl lg:text-[76px] xl:text-[84px] leading-[1.05] tracking-tight text-brand-white mb-6">
+          Your idea.<br/>
+<span class="text-brand-orange">Ready to play.</span>
+</h1>
+<!-- Supporting Value Copy -->
+<p class="text-lg lg:text-xl text-brand-muted max-w-xl leading-relaxed mb-8">
+          Turn any idea into a short video—with a clear story, motion graphics, synchronized voiceover, and captions.
+        </p>
+<!-- CTA Cluster -->
+<div class="flex flex-wrap items-center gap-4 mb-10">
+<a class="inline-flex items-center justify-center px-6 py-3.5 rounded-ctrl bg-brand-orange text-brand-black font-bold text-base hover:bg-brand-orangeHover transition-all min-h-[44px] shadow-sm" href="#signin">
+            Create a video
+          </a>
+<a class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-ctrl bg-brand-panel border border-brand-border text-brand-white font-semibold text-base hover:border-brand-muted hover:bg-brand-dark transition-all min-h-[44px]" href="#hero-stage">
+<svg class="w-4 h-4 fill-brand-orange" viewbox="0 0 16 16"><polygon points="4,2 14,8 4,14"></polygon></svg>
+            Watch an example
+          </a>
+</div>
+<!-- Scope & Quality Promise -->
+<div class="flex items-center gap-3 text-xs sm:text-sm font-medium text-brand-muted pt-4 border-t border-brand-border/60">
+<span>60–90 seconds</span>
+<span class="text-brand-border">•</span>
+<span>English</span>
+<span class="text-brand-border">•</span>
+<span>Made to explain</span>
+</div>
+</div>
+<!-- Right Column: Bespoke Animated-Video Stage -->
+<div class="lg:col-span-6 relative" id="hero-stage">
+<!-- Confined Perspective Grid Backdrop -->
+<div class="absolute -inset-4 cinema-grid rounded-media pointer-events-none opacity-80"></div>
+<!-- Main Stage Container -->
+<div class="relative bg-brand-panel border border-brand-border rounded-media p-5 lg:p-7 shadow-2xl">
+<!-- Top bar with idea slip connection -->
+<div class="flex items-center justify-between pb-4 mb-4 border-b border-brand-border/70">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-brand-border"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-brand-border"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-brand-border"></span>
+<span class="ml-2 text-xs font-medium text-brand-muted">binary_search_explainer.mp4</span>
+</div>
+<div class="flex items-center gap-2 text-xs font-medium text-brand-muted">
+<span class="px-2 py-0.5 rounded bg-brand-black border border-brand-border text-brand-orange font-semibold">Scene 02/04</span>
+<span class="hidden sm:inline tabular-nums" id="hero-time-readout">00:08.40</span>
+</div>
+</div>
+<!-- Upper Context: The Restrained Idea Slip connecting to storyboard -->
+<div class="mb-5 bg-brand-black/90 border border-brand-border rounded-ctrl p-3 relative">
+<div class="flex items-center justify-between gap-3 text-xs">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-brand-panel text-[11px] font-semibold text-brand-muted uppercase">Prompt Idea</span>
+<span class="font-medium text-brand-white">“Explain binary search simply with an array of numbers”</span>
+</div>
+<span class="text-[11px] font-semibold text-brand-orange hidden sm:inline">Approved plan</span>
+</div>
+</div>
+<!-- The Video Player Core (9:16 Vertical Video Frame inside landscape preview enclosure) -->
+<div class="relative bg-brand-black rounded-ctrl border border-brand-border p-6 flex flex-col items-center justify-center min-h-[380px] overflow-hidden">
+<!-- Stage Header overlay -->
+<div class="w-full flex items-center justify-between text-xs font-semibold text-brand-muted mb-6">
+<span class="uppercase tracking-wider">Step 2: Compare Midpoint</span>
+<span class="px-2 py-0.5 bg-brand-panel border border-brand-border text-brand-white rounded tabular-nums">Target: 42</span>
+</div>
+<!-- Visual Explainer Diagram: Array with Dimmed Half & Orange Midpoint -->
+<div class="w-full max-w-md my-auto py-6">
+<div class="grid grid-cols-7 gap-1.5 sm:gap-2 text-center mb-3">
+<!-- Dimmed left elements -->
+<div class="opacity-25 transition-opacity duration-300">
+<div class="text-[10px] font-medium text-brand-muted mb-1 tabular-nums">0</div>
+<div class="bg-brand-panel border border-brand-border rounded py-2.5 text-xs font-bold text-brand-muted tabular-nums">12</div>
+</div>
+<div class="opacity-25 transition-opacity duration-300">
+<div class="text-[10px] font-medium text-brand-muted mb-1 tabular-nums">1</div>
+<div class="bg-brand-panel border border-brand-border rounded py-2.5 text-xs font-bold text-brand-muted tabular-nums">23</div>
+</div>
+<div class="opacity-25 transition-opacity duration-300">
+<div class="text-[10px] font-medium text-brand-muted mb-1 tabular-nums">2</div>
+<div class="bg-brand-panel border border-brand-border rounded py-2.5 text-xs font-bold text-brand-muted tabular-nums">35</div>
+</div>
+<!-- Midpoint: Active Orange Match -->
+<div class="relative transform scale-105 z-10">
+<div class="text-[10px] text-brand-orange font-bold mb-1">MID [3]</div>
+<div class="bg-brand-orange border border-brand-orange text-brand-black rounded py-2.5 text-sm font-extrabold shadow-lg tabular-nums">
+                    42
+                  </div>
+<!-- Indicator Pointer -->
+<div class="absolute -bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center">
+<div class="w-1.5 h-1.5 bg-brand-orange rotate-45"></div>
+</div>
+</div>
+<!-- Right elements (remaining search domain) -->
+<div>
+<div class="text-[10px] font-medium text-brand-muted mb-1 tabular-nums">4</div>
+<div class="bg-brand-panel border border-brand-border rounded py-2.5 text-xs font-semibold text-brand-white tabular-nums">56</div>
+</div>
+<div>
+<div class="text-[10px] font-medium text-brand-muted mb-1 tabular-nums">5</div>
+<div class="bg-brand-panel border border-brand-border rounded py-2.5 text-xs font-semibold text-brand-white tabular-nums">71</div>
+</div>
+<div>
+<div class="text-[10px] font-medium text-brand-muted mb-1 tabular-nums">6</div>
+<div class="bg-brand-panel border border-brand-border rounded py-2.5 text-xs font-semibold text-brand-white tabular-nums">89</div>
+</div>
+</div>
+<!-- Logic explanation bar -->
+<div class="text-center mt-6">
+<span class="inline-block px-3 py-1 rounded bg-brand-panel/90 border border-brand-border text-xs font-medium text-brand-muted">
+                  left = 4, right = 6  •  <span class="text-brand-orange font-semibold">array[mid] == 42 (Found)</span>
+</span>
+</div>
+</div>
+<!-- Synchronized Caption Overlay -->
+<div class="w-full mt-4 bg-brand-panel/80 border border-brand-border rounded-ctrl p-3 flex items-center justify-between">
+<div class="flex items-center gap-2 text-xs">
+<span class="px-1.5 py-0.5 rounded bg-brand-black text-[10px] font-semibold text-brand-muted uppercase">Caption</span>
+<span class="font-medium text-brand-white tracking-wide">“Check the middle. Halve the search.”</span>
+</div>
+<span class="text-[11px] font-semibold text-brand-muted">O(log n)</span>
+</div>
+</div>
+<!-- Bottom Waveform / Timeline / Controls -->
+<div class="mt-4 pt-3 border-t border-brand-border flex flex-col gap-3">
+<!-- Progress Bar -->
+<div class="relative w-full h-1.5 bg-brand-dark rounded-full overflow-hidden">
+<div class="h-full bg-brand-orange w-0 rounded-full transition-[width] duration-75" id="hero-progress"></div>
+</div>
+<div class="flex items-center justify-between text-xs text-brand-muted">
+<div class="flex items-center gap-2">
+<!-- Play / Pause interactive toggle (Minimum 44px touch target) -->
+<button aria-label="Pause animation sequence" class="inline-flex items-center justify-center gap-2 text-brand-white hover:text-brand-orange transition-colors min-h-[44px] px-3.5 py-2.5 rounded-ctrl bg-brand-black/40 border border-brand-border hover:border-brand-borderLight focus:outline-none focus:ring-1 focus:ring-brand-orange" id="toggle-motion-btn" type="button">
+<span class="flex items-center justify-center" id="pause-icon">
+<svg class="w-3.5 h-3.5 fill-current" viewbox="0 0 16 16"><rect height="12" width="3" x="3" y="2"></rect><rect height="12" width="3" x="10" y="2"></rect></svg>
+</span>
+<span class="text-xs font-semibold" id="motion-btn-label">Pause animation</span>
+</button>
+<!-- Replay control (Minimum 44px touch target) -->
+<button aria-label="Replay animation" class="inline-flex items-center justify-center text-brand-muted hover:text-brand-white transition-colors min-h-[44px] px-3.5 py-2.5 rounded-ctrl bg-brand-black/40 border border-brand-border hover:border-brand-borderLight text-xs font-semibold focus:outline-none focus:ring-1 focus:ring-brand-orange" id="replay-motion-btn" type="button">
+                  Replay
+                </button>
+</div>
+<!-- Time readout -->
+<div class="text-xs font-medium tabular-nums flex items-center gap-2">
+<span class="text-brand-white" id="current-time-display">00:00</span>
+<span>/</span>
+<span>00:24</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 1: A CLEAR STORY. IN FOUR STEPS. -->
+<section class="py-24 border-b border-brand-border" id="how-it-works">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+<!-- Section Header -->
+<div class="max-w-2xl mb-16">
+<div class="text-xs font-semibold uppercase tracking-wider text-brand-orange mb-3">Structured Creation</div>
+<h2 class="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-brand-white tracking-tight">
+          A clear story. In four steps.
+        </h2>
+<p class="text-base sm:text-lg text-brand-muted mt-4">
+          Every video goes through an intentional pipeline where you review the script and visual plan before a single second is rendered.
+        </p>
+</div>
+<!-- 4 Horizontal Step Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Step 1: Idea -->
+<div class="bg-brand-panel border border-brand-border rounded-ctrl p-6 flex flex-col justify-between hover:border-brand-borderLight transition-colors">
+<div>
+<div class="flex items-center justify-between mb-8">
+<span class="text-2xl font-extrabold text-brand-white tabular-nums">01</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold uppercase bg-brand-dark text-brand-muted border border-brand-border">Input</span>
+</div>
+<h3 class="font-heading font-bold text-xl text-brand-white mb-2">Idea</h3>
+<p class="text-sm text-brand-muted leading-relaxed">
+              Start with any topic, concept, science question, or idea. Type a concise prompt without needing to write a full video script.
+            </p>
+</div>
+<div class="mt-8 pt-4 border-t border-brand-border/60 text-xs font-medium text-brand-subtle">
+            Prompt to conceptual outline
+          </div>
+</div>
+<!-- Step 2: Storyboard (Approval Gate) -->
+<div class="bg-brand-panel border-2 border-brand-borderLight rounded-ctrl p-6 flex flex-col justify-between relative shadow-lg">
+<div class="absolute -top-3 left-6 px-2.5 py-0.5 rounded bg-brand-orange text-brand-black text-[11px] font-bold uppercase">
+            Review Gate
+          </div>
+<div>
+<div class="flex items-center justify-between mb-8 pt-1">
+<span class="text-2xl font-extrabold text-brand-orange tabular-nums">02</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold uppercase bg-brand-dark text-brand-orange border border-brand-orange/40">Approval</span>
+</div>
+<h3 class="font-heading font-bold text-xl text-brand-white mb-2">Storyboard</h3>
+<p class="text-sm text-brand-muted leading-relaxed">
+              The AI lays out narration lines paired frame-by-frame with diagram specs. You inspect and adjust the scenes before generation.
+            </p>
+</div>
+<div class="mt-8 pt-4 border-t border-brand-border/60 text-xs font-semibold text-brand-orange">
+            Approve plan before render
+          </div>
+</div>
+<!-- Step 3: Video -->
+<div class="bg-brand-panel border border-brand-border rounded-ctrl p-6 flex flex-col justify-between hover:border-brand-borderLight transition-colors">
+<div>
+<div class="flex items-center justify-between mb-8">
+<span class="text-2xl font-extrabold text-brand-white tabular-nums">03</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold uppercase bg-brand-dark text-brand-muted border border-brand-border">Rendering</span>
+</div>
+<h3 class="font-heading font-bold text-xl text-brand-white mb-2">Video</h3>
+<p class="text-sm text-brand-muted leading-relaxed">
+              Generate your video: Crisp vector animations, synchronized voiceover audio, and timed highlight captions.
+            </p>
+</div>
+<div class="mt-8 pt-4 border-t border-brand-border/60 text-xs font-medium text-brand-subtle">
+            Motion graphics &amp; voiceover synthesis
+          </div>
+</div>
+<!-- Step 4: Publish -->
+<div class="bg-brand-panel border border-brand-border rounded-ctrl p-6 flex flex-col justify-between hover:border-brand-borderLight transition-colors">
+<div>
+<div class="flex items-center justify-between mb-8">
+<span class="text-2xl font-extrabold text-brand-white tabular-nums">04</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold uppercase bg-brand-dark text-brand-muted border border-brand-border">Delivery</span>
+</div>
+<h3 class="font-heading font-bold text-xl text-brand-white mb-2">Publish</h3>
+<p class="text-sm text-brand-muted leading-relaxed">
+              Download clean 1080p MP4 master files, or connect an eligible Instagram professional account to publish or schedule directly when you're completely satisfied.
+            </p>
+</div>
+<div class="mt-8 pt-4 border-t border-brand-border/60 text-xs font-medium text-brand-subtle">
+            Download or scheduled post
+          </div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: SEE WHAT AN IDEA CAN BECOME (Examples) -->
+<section class="py-24 border-b border-brand-border bg-brand-dark/50" id="examples">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+<div>
+<div class="text-xs font-semibold uppercase tracking-wider text-brand-orange mb-3">Specimen Gallery</div>
+<h2 class="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-brand-white tracking-tight">
+            See what an idea can become.
+          </h2>
+</div>
+<p class="text-sm font-medium text-brand-muted max-w-sm">
+          Actual explanatory sequences generated across science, technical concepts, algorithms, and everyday topics.
+        </p>
+</div>
+<!-- 3 Preview Cards (No fake metrics/views) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1: Binary Search -->
+<div class="bg-brand-panel border border-brand-border rounded-media overflow-hidden group hover:border-brand-borderLight transition-all">
+<!-- Thumbnail Stage -->
+<div class="h-64 bg-brand-black p-6 relative flex flex-col justify-between border-b border-brand-border">
+<div class="flex items-center justify-between text-xs font-semibold">
+<span class="text-brand-muted">CS FUNDAMENTALS</span>
+<span class="px-2 py-0.5 rounded bg-brand-panel border border-brand-border text-brand-white tabular-nums">01:17</span>
+</div>
+<!-- Minimal Vector Graphic in frame -->
+<div class="py-4">
+<div class="flex justify-center items-center gap-1.5">
+<div class="w-8 h-10 rounded bg-brand-panel border border-brand-border flex items-center justify-center text-xs font-medium text-brand-muted tabular-nums">12</div>
+<div class="w-8 h-10 rounded bg-brand-panel border border-brand-border flex items-center justify-center text-xs font-medium text-brand-muted tabular-nums">23</div>
+<div class="w-9 h-12 rounded bg-brand-orange text-brand-black font-extrabold flex items-center justify-center text-sm shadow tabular-nums">42</div>
+<div class="w-8 h-10 rounded bg-brand-panel border border-brand-border flex items-center justify-center text-xs font-semibold text-brand-white tabular-nums">56</div>
+<div class="w-8 h-10 rounded bg-brand-panel border border-brand-border flex items-center justify-center text-xs font-semibold text-brand-white tabular-nums">89</div>
+</div>
+<div class="text-center mt-3 text-[11px] font-semibold text-brand-orange">mid = (low + high) / 2</div>
+</div>
+<div class="flex items-center justify-between text-xs text-brand-muted font-medium">
+<span>Divide &amp; Conquer</span>
+<span class="flex items-center gap-1 text-brand-white group-hover:text-brand-orange transition-colors">
+                Play preview <svg class="w-3.5 h-3.5 fill-current" viewbox="0 0 16 16"><polygon points="4,2 14,8 4,14"></polygon></svg>
+</span>
+</div>
+</div>
+<!-- Card Info -->
+<div class="p-6">
+<h3 class="font-heading font-bold text-lg text-brand-white mb-2">How binary search works</h3>
+<p class="text-sm text-brand-muted leading-relaxed">
+              Step-by-step array halving with logarithmic time complexity visualized through sequential pointer elimination.
+            </p>
+</div>
+</div>
+<!-- Card 2: RAM vs Storage -->
+<div class="bg-brand-panel border border-brand-border rounded-media overflow-hidden group hover:border-brand-borderLight transition-all">
+<!-- Thumbnail Stage -->
+<div class="h-64 bg-brand-black p-6 relative flex flex-col justify-between border-b border-brand-border">
+<div class="flex items-center justify-between text-xs font-semibold">
+<span class="text-brand-muted">SYSTEM ARCHITECTURE</span>
+<span class="px-2 py-0.5 rounded bg-brand-panel border border-brand-border text-brand-white tabular-nums">01:18</span>
+</div>
+<!-- Minimal Vector Graphic in frame -->
+<div class="py-4">
+<div class="grid grid-cols-2 gap-3 text-center">
+<div class="p-3 bg-brand-panel rounded border border-brand-border">
+<div class="text-[10px] font-bold text-brand-orange uppercase mb-1">Volatile RAM</div>
+<div class="text-xs font-semibold text-brand-white">Nanoseconds</div>
+<div class="text-[10px] text-brand-muted mt-1">Clears on power-off</div>
+</div>
+<div class="p-3 bg-brand-panel rounded border border-brand-border">
+<div class="text-[10px] font-bold text-brand-muted uppercase mb-1">Persistent SSD</div>
+<div class="text-xs font-semibold text-brand-white">Microseconds</div>
+<div class="text-[10px] text-brand-muted mt-1">Retains data</div>
+</div>
+</div>
+<div class="text-center mt-3 text-[11px] font-medium text-brand-muted">Memory Hierarchy Comparison</div>
+</div>
+<div class="flex items-center justify-between text-xs text-brand-muted font-medium">
+<span>Hardware Concept</span>
+<span class="flex items-center gap-1 text-brand-white group-hover:text-brand-orange transition-colors">
+                Play preview <svg class="w-3.5 h-3.5 fill-current" viewbox="0 0 16 16"><polygon points="4,2 14,8 4,14"></polygon></svg>
+</span>
+</div>
+</div>
+<!-- Card Info -->
+<div class="p-6">
+<h3 class="font-heading font-bold text-lg text-brand-white mb-2">RAM vs storage</h3>
+<p class="text-sm text-brand-muted leading-relaxed">
+              Explaining latency difference and persistence between CPU register caching, system memory, and flash storage.
+            </p>
+</div>
+</div>
+<!-- Card 3: The Water Cycle -->
+<div class="bg-brand-panel border border-brand-border rounded-media overflow-hidden group hover:border-brand-borderLight transition-all">
+<!-- Thumbnail Stage -->
+<div class="h-64 bg-brand-black p-6 relative flex flex-col justify-between border-b border-brand-border">
+<div class="flex items-center justify-between text-xs font-semibold">
+<span class="text-brand-muted">NATURAL SCIENCE</span>
+<span class="px-2 py-0.5 rounded bg-brand-panel border border-brand-border text-brand-white tabular-nums">01:22</span>
+</div>
+<!-- Minimal Vector Graphic in frame -->
+<div class="py-4">
+<div class="flex justify-between items-center px-4 relative">
+<div class="text-center">
+<div class="w-10 h-10 rounded-full bg-brand-panel border border-brand-border flex items-center justify-center text-xs font-bold text-brand-white mx-auto mb-1 tabular-nums">01</div>
+<div class="text-[10px] font-medium text-brand-muted">Evaporation</div>
+</div>
+<div class="text-brand-orange text-xs font-bold">→</div>
+<div class="text-center">
+<div class="w-10 h-10 rounded-full bg-brand-orange text-brand-black font-extrabold flex items-center justify-center text-xs mx-auto mb-1 tabular-nums">02</div>
+<div class="text-[10px] font-bold text-brand-white">Condense</div>
+</div>
+<div class="text-brand-orange text-xs font-bold">→</div>
+<div class="text-center">
+<div class="w-10 h-10 rounded-full bg-brand-panel border border-brand-border flex items-center justify-center text-xs font-bold text-brand-white mx-auto mb-1 tabular-nums">03</div>
+<div class="text-[10px] font-medium text-brand-muted">Precipitate</div>
+</div>
+</div>
+<div class="text-center mt-4 text-[11px] font-medium text-brand-muted">Thermodynamic loop visualization</div>
+</div>
+<div class="flex items-center justify-between text-xs text-brand-muted font-medium">
+<span>Earth Science</span>
+<span class="flex items-center gap-1 text-brand-white group-hover:text-brand-orange transition-colors">
+                Play preview <svg class="w-3.5 h-3.5 fill-current" viewbox="0 0 16 16"><polygon points="4,2 14,8 4,14"></polygon></svg>
+</span>
+</div>
+</div>
+<!-- Card Info -->
+<div class="p-6">
+<h3 class="font-heading font-bold text-lg text-brand-white mb-2">The water cycle</h3>
+<p class="text-sm text-brand-muted leading-relaxed">
+              Vector diagram tracking solar heat transfer, atmospheric condensation, precipitation, and ground collection loops.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: TWO ALTERNATING EDITORIAL FEATURE SPREADS -->
+<section class="py-24 border-b border-brand-border" id="workflow">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-12 flex flex-col gap-24 lg:gap-32">
+<!-- Feature 1: Every word has a visual -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Text Left -->
+<div class="lg:col-span-5">
+<div class="text-xs font-semibold uppercase tracking-wider text-brand-orange mb-3">Synchronization</div>
+<h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-brand-white tracking-tight mb-6">
+            Every word has a visual.
+          </h2>
+<p class="text-base text-brand-muted leading-relaxed mb-6">
+            Generic video tools place voiceover over unrelated stock footage. NamasteVideo synchronizes your audio line-by-line with exact vector diagrams and on-screen typography.
+          </p>
+<ul class="flex flex-col gap-3.5 text-sm text-brand-white mb-8">
+<li class="flex items-center gap-3">
+<span class="w-1.5 h-1.5 rounded-full bg-brand-orange"></span>
+              Synchronized AI voiceover paced with on-screen transitions
+            </li>
+<li class="flex items-center gap-3">
+<span class="w-1.5 h-1.5 rounded-full bg-brand-orange"></span>
+              Editable captions automatically timed to spoken phrases
+            </li>
+<li class="flex items-center gap-3">
+<span class="w-1.5 h-1.5 rounded-full bg-brand-orange"></span>
+              Zero stock footage or filler clips
+            </li>
+</ul>
+</div>
+<!-- Preview Mockup Right -->
+<div class="lg:col-span-7 bg-brand-panel border border-brand-border rounded-media p-6 lg:p-8">
+<div class="flex items-center justify-between text-xs font-semibold text-brand-muted pb-4 mb-6 border-b border-brand-border">
+<span>SCENE ALIGNMENT INSPECTOR</span>
+<span class="text-brand-orange">Frame 02 • Duration: 3.2s</span>
+</div>
+<div class="flex flex-col gap-4">
+<!-- Audio Track row -->
+<div class="p-4 bg-brand-black border border-brand-border rounded-ctrl flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-brand-panel border border-brand-border flex items-center justify-center text-brand-orange">
+<svg class="w-4 h-4 fill-current" viewbox="0 0 16 16"><path d="M11.536 14.01A8.473 8.473 0 0 0 14 8c0-2.26-.886-4.315-2.33-5.83l-.707.707A7.475 7.475 0 0 1 13 8c0 2.01-.79 3.84-2.071 5.196l.607.814zM2 6v4h3l4 4V2L5 6H2z"></path></svg>
+</div>
+<div>
+<div class="text-[11px] font-semibold text-brand-muted uppercase">Voiceover Track (English)</div>
+<div class="text-sm font-medium text-brand-white">“Check the middle. Halve the search.”</div>
+</div>
+</div>
+<span class="px-2 py-1 rounded bg-brand-panel text-xs font-medium text-brand-muted tabular-nums">3.2s</span>
+</div>
+<!-- Visual Diagram Trigger row -->
+<div class="p-4 bg-brand-black border border-brand-border rounded-ctrl flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-brand-panel border border-brand-border flex items-center justify-center text-brand-white">
+<svg class="w-4 h-4 fill-current" viewbox="0 0 16 16"><rect fill="none" height="12" rx="2" stroke="currentColor" stroke-width="2" width="12" x="2" y="2"></rect><line stroke="currentColor" stroke-width="2" x1="8" x2="8" y1="2" y2="14"></line></svg>
+</div>
+<div>
+<div class="text-[11px] font-semibold text-brand-muted uppercase">Diagram Trigger</div>
+<div class="text-sm font-medium text-brand-white">Dim indices 0–2; highlight mid index [3] with #E58C33</div>
+</div>
+</div>
+<span class="px-2 py-1 rounded bg-brand-panel text-xs font-semibold text-brand-orange">Sync: 0.4s</span>
+</div>
+<!-- On-Screen Text row -->
+<div class="p-4 bg-brand-black border border-brand-border rounded-ctrl flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-brand-panel border border-brand-border flex items-center justify-center text-brand-white">
+<span class="font-bold text-xs">CC</span>
+</div>
+<div>
+<div class="text-[11px] font-semibold text-brand-muted uppercase">Timed Closed Caption</div>
+<div class="text-sm font-medium text-brand-white">Display bold subtitle at bottom center</div>
+</div>
+</div>
+<span class="px-2 py-1 rounded bg-brand-panel text-xs font-medium text-brand-muted">Word-level</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Feature 2: Make it better. Just ask. (Alternating: Visual Left, Text Right) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Visual Mockup Left -->
+<div class="lg:col-span-7 order-2 lg:order-1 bg-brand-panel border border-brand-border rounded-media p-6 lg:p-8">
+<div class="flex items-center justify-between text-xs font-semibold text-brand-muted pb-4 mb-6 border-b border-brand-border">
+<span>NATURAL LANGUAGE REVISION</span>
+<span class="text-brand-orange">Revision Iteration v2</span>
+</div>
+<!-- Prompt revision bubble -->
+<div class="mb-6 p-4 rounded-ctrl bg-brand-black border border-brand-border">
+<div class="flex items-center justify-between text-xs font-semibold text-brand-muted mb-2">
+<span class="text-brand-orange">You requested:</span>
+<span>Just now</span>
+</div>
+<div class="text-sm font-medium text-brand-white">
+              “Make the opening simpler. Skip the math definition and start directly with searching for a name in a phone book.”
+            </div>
+</div>
+<!-- Updated Storyboard Diff -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="p-4 rounded-ctrl bg-brand-black/60 border border-brand-border opacity-50">
+<div class="text-[10px] font-semibold text-brand-muted uppercase mb-1">Previous Scene 1 (Replaced)</div>
+<div class="text-xs font-medium text-brand-muted line-through">“A binary search algorithm operates on sorted arrays in logarithmic time complexity...”</div>
+</div>
+<div class="p-4 rounded-ctrl bg-brand-black border border-brand-orange/60">
+<div class="text-[10px] font-semibold text-brand-orange uppercase mb-1">Updated Scene 1 (Approved)</div>
+<div class="text-xs font-medium text-brand-white">“Imagine looking up a name in a phone book. You don’t read every page—you open right to the middle.”</div>
+</div>
+</div>
+</div>
+<!-- Text Right -->
+<div class="lg:col-span-5 order-1 lg:order-2">
+<div class="text-xs font-semibold uppercase tracking-wider text-brand-orange mb-3">Refinement Loop</div>
+<h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-brand-white tracking-tight mb-6">
+            Make it better. Just ask.
+          </h2>
+<p class="text-base text-brand-muted leading-relaxed mb-6">
+            Need the explanation more concise? Want simpler vocabulary? Just describe what to change. NamasteVideo updates the script and storyboard plan before final video production.
+          </p>
+<ul class="flex flex-col gap-3.5 text-sm text-brand-white mb-8">
+<li class="flex items-center gap-3">
+<span class="w-1.5 h-1.5 rounded-full bg-brand-orange"></span>
+              Ask in plain language without editing keyframes manually
+            </li>
+<li class="flex items-center gap-3">
+<span class="w-1.5 h-1.5 rounded-full bg-brand-orange"></span>
+              Review script modifications side-by-side
+            </li>
+<li class="flex items-center gap-3">
+<span class="w-1.5 h-1.5 rounded-full bg-brand-orange"></span>
+              Render only when the flow is completely right
+            </li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: DELIVERY STRIP (Ready when you are) -->
+<section class="py-24 border-b border-brand-border bg-brand-dark/50" id="delivery">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+<div class="max-w-2xl mb-16">
+<div class="text-xs font-semibold uppercase tracking-wider text-brand-orange mb-3">Distribution Control</div>
+<h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-brand-white tracking-tight">
+          Ready when you are.
+        </h2>
+<p class="text-base sm:text-lg text-brand-muted mt-4">
+          Review your video, then choose when and where it goes. No video is ever published automatically without your explicit approval.
+        </p>
+</div>
+<!-- Feature Strip Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Feature 1: MP4 Download -->
+<div class="bg-brand-panel border border-brand-border rounded-ctrl p-6 hover:border-brand-borderLight transition-all">
+<div class="w-10 h-10 rounded-ctrl bg-brand-black border border-brand-border flex items-center justify-center text-brand-orange mb-6">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 16 16"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"></path><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"></path></svg>
+</div>
+<h3 class="font-heading font-bold text-lg text-brand-white mb-2">MP4 Download</h3>
+<p class="text-sm text-brand-muted leading-relaxed">
+            Download your completed 1080p MP4 file directly to your drive. Ready for YouTube Shorts, courses, or presentations without watermarks.
+          </p>
+</div>
+<!-- Feature 2: Connect Instagram -->
+<div class="bg-brand-panel border border-brand-border rounded-ctrl p-6 hover:border-brand-borderLight transition-all">
+<div class="w-10 h-10 rounded-ctrl bg-brand-black border border-brand-border flex items-center justify-center text-brand-white mb-6">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path></svg>
+</div>
+<h3 class="font-heading font-bold text-lg text-brand-white mb-2">Connect Instagram</h3>
+<p class="text-sm text-brand-muted leading-relaxed">
+            Connect an eligible Instagram professional account to publish or schedule directly when you're completely satisfied.
+          </p>
+</div>
+<!-- Feature 3: Post Now or Schedule -->
+<div class="bg-brand-panel border border-brand-border rounded-ctrl p-6 hover:border-brand-borderLight transition-all">
+<div class="w-10 h-10 rounded-ctrl bg-brand-black border border-brand-border flex items-center justify-center text-brand-white mb-6">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 16 16"><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"></path></svg>
+</div>
+<h3 class="font-heading font-bold text-lg text-brand-white mb-2">Post Now or Schedule</h3>
+<p class="text-sm text-brand-muted leading-relaxed">
+            Publish immediately or pick your target date and time. Review captions, tags, and cover frame before confirming.
+          </p>
+</div>
+</div>
+<!-- Clear Policy Note -->
+<div class="mt-8 text-xs font-medium text-brand-muted max-w-xl">
+        * Note: Automated Instagram publishing requires an active connected professional account. All posts remain pending until you explicitly confirm publication.
+      </div>
+</div>
+</section>
+<!-- SECTION 5: CONCISE FAQ (5 items) -->
+<section class="py-24 border-b border-brand-border" id="faq">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+<div class="max-w-2xl mb-16">
+<div class="text-xs font-semibold uppercase tracking-wider text-brand-orange mb-3">Clear Answers</div>
+<h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-brand-white tracking-tight">
+          Frequently asked questions.
+        </h2>
+</div>
+<div class="max-w-3xl flex flex-col gap-4">
+<!-- Q1 -->
+<details class="group bg-brand-panel border border-brand-border rounded-ctrl p-6 [&amp;_summary::-webkit-details-marker]:hidden">
+<summary class="flex items-center justify-between cursor-pointer focus:outline-none">
+<h3 class="font-heading font-semibold text-lg text-brand-white pr-4">What length and languages are supported?</h3>
+<span class="text-brand-orange text-xl font-bold transition-transform group-open:rotate-45">+</span>
+</summary>
+<div class="mt-4 pt-4 border-t border-brand-border/60 text-sm text-brand-muted leading-relaxed">
+            NamasteVideo generates 60–90 second explainer videos in English. This format is optimized for vertical platforms like Reels and YouTube Shorts, keeping explanations crisp, paced, and engaging.
+          </div>
+</details>
+<!-- Q2 -->
+<details class="group bg-brand-panel border border-brand-border rounded-ctrl p-6 [&amp;_summary::-webkit-details-marker]:hidden">
+<summary class="flex items-center justify-between cursor-pointer focus:outline-none">
+<h3 class="font-heading font-semibold text-lg text-brand-white pr-4">Can I edit the storyboard and captions before rendering?</h3>
+<span class="text-brand-orange text-xl font-bold transition-transform group-open:rotate-45">+</span>
+</summary>
+<div class="mt-4 pt-4 border-t border-brand-border/60 text-sm text-brand-muted leading-relaxed">
+            Yes, absolutely. The storyboard stage is an explicit review gate. You can edit voiceover narration, modify caption wording, or ask the AI to re-simplify any scene before final video compilation.
+          </div>
+</details>
+<!-- Q3 -->
+<details class="group bg-brand-panel border border-brand-border rounded-ctrl p-6 [&amp;_summary::-webkit-details-marker]:hidden">
+<summary class="flex items-center justify-between cursor-pointer focus:outline-none">
+<h3 class="font-heading font-semibold text-lg text-brand-white pr-4">Can I download the video without connecting an Instagram account?</h3>
+<span class="text-brand-orange text-xl font-bold transition-transform group-open:rotate-45">+</span>
+</summary>
+<div class="mt-4 pt-4 border-t border-brand-border/60 text-sm text-brand-muted leading-relaxed">
+            Yes. Every rendered video is immediately available as a standard 1080p MP4 download file. You can save it to your device and use it anywhere without ever connecting Instagram.
+          </div>
+</details>
+<!-- Q4 -->
+<details class="group bg-brand-panel border border-brand-border rounded-ctrl p-6 [&amp;_summary::-webkit-details-marker]:hidden">
+<summary class="flex items-center justify-between cursor-pointer focus:outline-none">
+<h3 class="font-heading font-semibold text-lg text-brand-white pr-4">What account is required to publish directly to Instagram?</h3>
+<span class="text-brand-orange text-xl font-bold transition-transform group-open:rotate-45">+</span>
+</summary>
+<div class="mt-4 pt-4 border-t border-brand-border/60 text-sm text-brand-muted leading-relaxed">
+            Direct publishing requires an eligible Instagram Professional (Business or Creator) account. Personal Instagram accounts are not supported by Instagram's API for external publishing.
+          </div>
+</details>
+<!-- Q5 -->
+<details class="group bg-brand-panel border border-brand-border rounded-ctrl p-6 [&amp;_summary::-webkit-details-marker]:hidden">
+<summary class="flex items-center justify-between cursor-pointer focus:outline-none">
+<h3 class="font-heading font-semibold text-lg text-brand-white pr-4">Who can access the platform right now?</h3>
+<span class="text-brand-orange text-xl font-bold transition-transform group-open:rotate-45">+</span>
+</summary>
+<div class="mt-4 pt-4 border-t border-brand-border/60 text-sm text-brand-muted leading-relaxed">
+            NamasteVideo.ai is currently in an internal preview phase for approved creators and educators. Access is provided via sign-in for authenticated preview users.
+          </div>
+</details>
+</div>
+</div>
+</section>
+<!-- SECTION 6: CLOSING CTA STRIP -->
+<section class="py-24 border-b border-brand-border relative overflow-hidden bg-brand-black">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-12 text-center relative z-10">
+<div class="max-w-3xl mx-auto">
+<h2 class="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-brand-white tracking-tight mb-6">
+          Your next video starts with an idea.
+        </h2>
+<p class="text-lg text-brand-muted mb-10 max-w-xl mx-auto">
+          Transform concepts, science, and complex topics into motion-graphic explainers with voiceover and captions.
+        </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+<a class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-ctrl bg-brand-orange text-brand-black font-bold text-base hover:bg-brand-orangeHover transition-all min-h-[44px]" href="#signin">
+            Create a video
+          </a>
+</div>
+<p class="text-xs font-medium text-brand-muted">
+          Internal preview access for approved creators • Sign in to continue
+        </p>
+</div>
+</div>
+</section>
+<!-- SECTION 7: MINIMAL FOOTER -->
+<footer class="py-12 bg-brand-dark">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
+<!-- Wordmark -->
+<div class="flex items-center gap-2.5">
+<div class="w-6 h-6 rounded-ctrl bg-brand-orange flex items-center justify-center text-brand-black">
+<svg class="w-3 h-3 fill-current ml-0.5" viewbox="0 0 16 16"><polygon points="4,2 14,8 4,14"></polygon></svg>
+</div>
+<span class="font-heading font-bold text-lg text-brand-white tracking-tight">
+          NamasteVideo<span class="text-brand-orange">.ai</span>
+</span>
+</div>
+<!-- Links -->
+<div class="flex flex-wrap items-center justify-center gap-6 text-xs font-medium text-brand-muted">
+<a class="hover:text-brand-white transition-colors" href="#how-it-works">How it works</a>
+<a class="hover:text-brand-white transition-colors" href="#examples">Examples</a>
+<a class="hover:text-brand-white transition-colors" href="#workflow">Workflow</a>
+<a class="hover:text-brand-white transition-colors" href="#delivery">Delivery</a>
+<a class="hover:text-brand-white transition-colors" href="#faq">FAQ</a>
+<a class="hover:text-brand-white transition-colors" href="#signin">Sign in</a>
+</div>
+<!-- Copyright & Access -->
+<div class="text-xs font-medium text-brand-subtle">
+        Cinema Direction Approved • Internal Preview
+      </div>
+</div>
+</footer>
+<!-- SCRIPT: Hero Stage Motion Sequence Controller (Plays once and holds final state) -->
+<script>
+    (function() {
+      const progressBar = document.getElementById('hero-progress');
+      const toggleBtn = document.getElementById('toggle-motion-btn');
+      const btnLabel = document.getElementById('motion-btn-label');
+      const replayBtn = document.getElementById('replay-motion-btn');
+      const pauseIcon = document.getElementById('pause-icon');
+      const currentTimeDisplay = document.getElementById('current-time-display');
+      const heroTimeReadout = document.getElementById('hero-time-readout');
+
+      let isPlaying = false;
+      let progress = 0; // starts from 0 to play through once
+      let interval = null;
+      const totalDurationSec = 24;
+
+      function updateReadouts(pct) {
+        progressBar.style.width = pct + '%';
+        const currentSec = Math.min(totalDurationSec, (pct / 100) * totalDurationSec);
+        const formattedSec = Math.floor(currentSec);
+        const fractionSec = Math.floor((currentSec - formattedSec) * 100);
+        const displayMinSec = '00:' + (formattedSec < 10 ? '0' : '') + formattedSec;
+        
+        if (currentTimeDisplay) {
+          currentTimeDisplay.textContent = displayMinSec;
+        }
+        if (heroTimeReadout) {
+          heroTimeReadout.textContent = displayMinSec + '.' + (fractionSec < 10 ? '0' : '') + fractionSec;
+        }
+      }
+
+      function startAnimation() {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          updateReadouts(100);
+          pauseAnimation(true);
+          return;
+        }
+
+        // If already completed at 100%, reset to 0 to replay
+        if (progress >= 100) {
+          progress = 0;
+        }
+
+        isPlaying = true;
+        btnLabel.textContent = "Pause animation";
+        pauseIcon.innerHTML = '<svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 16 16"><rect x="3" y="2" width="3" height="12"/><rect x="10" y="2" width="3" height="12"/></svg>';
+        
+        clearInterval(interval);
+        interval = setInterval(() => {
+          progress += 0.5;
+          if (progress >= 100) {
+            progress = 100;
+            updateReadouts(progress);
+            pauseAnimation(true); // hold final state once finished
+            return;
+          }
+          updateReadouts(progress);
+        }, 50);
+      }
+
+      function pauseAnimation(isComplete = false) {
+        isPlaying = false;
+        clearInterval(interval);
+        btnLabel.textContent = isComplete ? "Play animation" : "Resume animation";
+        pauseIcon.innerHTML = '<svg class="w-3.5 h-3.5 fill-current ml-0.5" viewBox="0 0 16 16"><polygon points="4,2 14,8 4,14"/></svg>';
+      }
+
+      toggleBtn.addEventListener('click', () => {
+        if (isPlaying) {
+          pauseAnimation(false);
+        } else {
+          startAnimation();
+        }
+      });
+
+      replayBtn.addEventListener('click', () => {
+        progress = 0;
+        updateReadouts(0);
+        startAnimation();
+      });
+
+      // Start single playthrough on load
+      startAnimation();
+    })();
+  </script>
+</body></html>

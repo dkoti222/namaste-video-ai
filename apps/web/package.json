@@ -1,0 +1,44 @@
+{
+  "name": "@namastevideo/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "24.x"
+  },
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "dev:http": "next dev --hostname 127.0.0.1",
+    "media-tunnel": "node scripts/media-tunnel.mjs",
+    "build": "next build",
+    "start": "next start --hostname 127.0.0.1",
+    "typecheck": "next typegen && tsc --noEmit",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "db:migrate": "node --env-file-if-exists=.env.local --import tsx scripts/db.ts migrate",
+    "db:status": "node --env-file-if-exists=.env.local --import tsx scripts/db.ts status",
+    "access": "node --env-file-if-exists=.env.local --import tsx scripts/access.ts",
+    "voice-sample": "node --env-file-if-exists=.env.local --import tsx scripts/voice-sample.ts",
+    "dev:inngest": "inngest-cli dev --no-discovery -u http://127.0.0.1:3001/api/inngest"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "3.1146.0",
+    "@fontsource/inter": "5.3.0",
+    "@fontsource/plus-jakarta-sans": "5.3.0",
+    "better-auth": "1.7.7",
+    "inngest": "4.21.1",
+    "mongodb": "7.7.0",
+    "next": "16.3.8",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "22.19.0",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "inngest-cli": "1.45.1",
+    "mongodb-memory-server": "11.3.0",
+    "tsx": "4.20.6",
+    "typescript": "5.9.3"
+  }
+}

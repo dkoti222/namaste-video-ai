@@ -1,0 +1,331 @@
+{
+  "schemaVersion": 2,
+  "title": "How DNS Works",
+  "audience": "School students",
+  "learningObjective": "Understand how the Domain Name System translates website names into numeric IP addresses.",
+  "language": "en",
+  "voicePreset": "daniel-test",
+  "sources": [],
+  "scenes": [
+    {
+      "id": "intro",
+      "title": "The Phonebook of Web",
+      "kicker": "Introduction",
+      "narration": "Have you ever wondered how typing a simple website name instantly opens your favorite page? Behind the scenes, the internet relies on a special system called DNS to find the right digital address.",
+      "pronunciation": [
+        {
+          "phrase": "DNS",
+          "occurrence": 1,
+          "spokenAs": "Dee En Ess"
+        }
+      ],
+      "visual": {
+        "component": "flow",
+        "version": 1,
+        "data": {
+          "steps": [
+            {
+              "id": "step-1",
+              "label": "User types name"
+            },
+            {
+              "id": "step-2",
+              "label": "DNS lookup"
+            },
+            {
+              "id": "step-3",
+              "label": "Site loads"
+            }
+          ],
+          "edges": [
+            {
+              "id": "edge-1",
+              "from": "step-1",
+              "to": "step-2"
+            },
+            {
+              "id": "edge-2",
+              "from": "step-2",
+              "to": "step-3"
+            }
+          ]
+        }
+      },
+      "events": [
+        {
+          "id": "e1",
+          "targetId": "diagram",
+          "action": "reveal",
+          "cue": {
+            "phrase": "special system called DNS",
+            "occurrence": 1,
+            "offsetMs": 0
+          },
+          "durationMs": 600
+        }
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "names-vs-numbers",
+      "title": "Names Versus Numbers",
+      "kicker": "The Challenge",
+      "narration": "Humans find it easy to remember words like example dot com, but computers communicate using numbers called IP addresses. A DNS server acts as a translator between these two different formats.",
+      "pronunciation": [],
+      "visual": {
+        "component": "comparison",
+        "version": 1,
+        "data": {
+          "left": {
+            "heading": "Website Names",
+            "points": [
+              "Easy for humans",
+              "Words and letters",
+              "Easy to remember"
+            ]
+          },
+          "right": {
+            "heading": "IP Addresses",
+            "points": [
+              "Used by routers",
+              "Numbers only",
+              "Hard to memorize"
+            ]
+          }
+        }
+      },
+      "events": [
+        {
+          "id": "e1",
+          "targetId": "right",
+          "action": "compare",
+          "cue": {
+            "phrase": "translator between these",
+            "occurrence": 1,
+            "offsetMs": 0
+          },
+          "durationMs": 600
+        }
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "resolver-step",
+      "title": "Asking the Resolver",
+      "kicker": "Step One",
+      "narration": "When you enter a web address, your device first contacts a recursive resolver. Think of this resolver as a smart librarian whose job is to track down the correct numeric address for you.",
+      "pronunciation": [],
+      "visual": {
+        "component": "flow",
+        "version": 1,
+        "data": {
+          "steps": [
+            {
+              "id": "step-1",
+              "label": "Web browser"
+            },
+            {
+              "id": "step-2",
+              "label": "Local network"
+            },
+            {
+              "id": "step-3",
+              "label": "Resolver"
+            }
+          ],
+          "edges": [
+            {
+              "id": "edge-1",
+              "from": "step-1",
+              "to": "step-2"
+            },
+            {
+              "id": "edge-2",
+              "from": "step-2",
+              "to": "step-3"
+            }
+          ]
+        }
+      },
+      "events": [
+        {
+          "id": "e1",
+          "targetId": "diagram",
+          "action": "reveal",
+          "cue": {
+            "phrase": "recursive resolver",
+            "occurrence": 1,
+            "offsetMs": 0
+          },
+          "durationMs": 600
+        }
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "root-servers",
+      "title": "The Root Servers",
+      "kicker": "Step Two",
+      "narration": "If the resolver does not know the address, it asks a root server. The root server checks the file extension, such as dot com or dot in, and points the resolver to the correct top level domain server.",
+      "pronunciation": [],
+      "visual": {
+        "component": "flow",
+        "version": 1,
+        "data": {
+          "steps": [
+            {
+              "id": "step-1",
+              "label": "Resolver"
+            },
+            {
+              "id": "step-2",
+              "label": "Root server"
+            },
+            {
+              "id": "step-3",
+              "label": "TLD server"
+            }
+          ],
+          "edges": [
+            {
+              "id": "edge-1",
+              "from": "step-1",
+              "to": "step-2"
+            },
+            {
+              "id": "edge-2",
+              "from": "step-2",
+              "to": "step-3"
+            }
+          ]
+        }
+      },
+      "events": [
+        {
+          "id": "e1",
+          "targetId": "diagram",
+          "action": "reveal",
+          "cue": {
+            "phrase": "asks a root server",
+            "occurrence": 1,
+            "offsetMs": 0
+          },
+          "durationMs": 600
+        }
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "authoritative",
+      "title": "Authoritative Answer",
+      "kicker": "Step Three",
+      "narration": "Finally, the query reaches an authoritative name server which holds the exact IP address. Once found, this number travels all the way back to your device.",
+      "pronunciation": [],
+      "visual": {
+        "component": "flow",
+        "version": 1,
+        "data": {
+          "steps": [
+            {
+              "id": "step-1",
+              "label": "TLD server"
+            },
+            {
+              "id": "step-2",
+              "label": "Authoritative"
+            },
+            {
+              "id": "step-3",
+              "label": "IP found"
+            }
+          ],
+          "edges": [
+            {
+              "id": "edge-1",
+              "from": "step-1",
+              "to": "step-2"
+            },
+            {
+              "id": "edge-2",
+              "from": "step-2",
+              "to": "step-3"
+            }
+          ]
+        }
+      },
+      "events": [
+        {
+          "id": "e1",
+          "targetId": "diagram",
+          "action": "reveal",
+          "cue": {
+            "phrase": "authoritative name server",
+            "occurrence": 1,
+            "offsetMs": 0
+          },
+          "durationMs": 600
+        }
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "conclusion",
+      "title": "Instant Connection",
+      "kicker": "Summary",
+      "narration": "This entire multi step journey happens in just milliseconds. Thanks to DNS, you can browse the web smoothly without ever needing to remember complex number strings.",
+      "pronunciation": [
+        {
+          "phrase": "DNS",
+          "occurrence": 1,
+          "spokenAs": "Dee En Ess"
+        }
+      ],
+      "visual": {
+        "component": "flow",
+        "version": 1,
+        "data": {
+          "steps": [
+            {
+              "id": "step-1",
+              "label": "Query sent"
+            },
+            {
+              "id": "step-2",
+              "label": "DNS lookup"
+            },
+            {
+              "id": "step-3",
+              "label": "Page opens"
+            }
+          ],
+          "edges": [
+            {
+              "id": "edge-1",
+              "from": "step-1",
+              "to": "step-2"
+            },
+            {
+              "id": "edge-2",
+              "from": "step-2",
+              "to": "step-3"
+            }
+          ]
+        }
+      },
+      "events": [
+        {
+          "id": "e1",
+          "targetId": "diagram",
+          "action": "reveal",
+          "cue": {
+            "phrase": "Thanks to DNS",
+            "occurrence": 1,
+            "offsetMs": 0
+          },
+          "durationMs": 600
+        }
+      ],
+      "sourceIds": []
+    }
+  ]
+}

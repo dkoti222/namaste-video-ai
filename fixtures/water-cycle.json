@@ -1,0 +1,15 @@
+{
+  "schemaVersion":1,
+  "title":"The water cycle",
+  "audience":"Curious beginners in India",
+  "voicePreset":"indian-english-female",
+  "scenes":[
+    {"id":"journey","title":"One drop. An endless journey.","kicker":"THE WATER CYCLE","type":"overview","labels":["Water","Air","Land"],"narration":"The water in your glass has been on an extraordinary journey. It moves between oceans, the air, and land in a repeating water cycle.","cue":"water cycle","occurrence":1},
+    {"id":"sun","title":"It starts with the sun.","kicker":"01 / ENERGY","type":"evaporation","labels":["Sunlight","Surface water"],"narration":"The sun supplies energy that warms water in rivers, lakes, and oceans. Some liquid water becomes invisible water vapour and enters the air.","cue":"warms water","occurrence":1},
+    {"id":"evaporation","title":"Liquid becomes vapour.","kicker":"02 / EVAPORATION","type":"evaporation","labels":["Liquid water","Water vapour"],"narration":"This change is called evaporation. It happens at the surface, even without boiling. Plants also release water vapour through tiny openings in their leaves.","cue":"evaporation","occurrence":1},
+    {"id":"clouds","title":"Cooling creates clouds.","kicker":"03 / CONDENSATION","type":"condensation","labels":["Cooling air","Tiny droplets"],"narration":"When moist air cools enough, water vapour condenses onto tiny particles. Countless little water droplets or ice crystals gather together to form clouds.","cue":"condenses","occurrence":1},
+    {"id":"rain","title":"Water returns to Earth.","kicker":"04 / PRECIPITATION","type":"rain","labels":["Growing droplets","Rainfall"],"narration":"Inside clouds, droplets and ice particles can grow. When conditions allow them to fall, water returns as precipitation, including rain, snow, or hail.","cue":"fall","occurrence":1},
+    {"id":"collection","title":"Many paths. One cycle.","kicker":"05 / COLLECTION","type":"collection","labels":["Runoff","Groundwater","Ocean"],"narration":"Some water flows over land into rivers and oceans. Some soaks into the ground. Water can remain stored for a while before moving again.","cue":"flows","occurrence":1},
+    {"id":"takeaway","title":"The journey keeps going.","kicker":"THE BIG IDEA","type":"overview","labels":["Evaporate","Condense","Return"],"narration":"The sun powers evaporation, cooling helps clouds form, and gravity brings water back down. The water cycle connects the sky, the land, and us.","cue":"water cycle","occurrence":1}
+  ]
+}

@@ -1,0 +1,19 @@
+node_modules/
+.env*
+!.env.example
+runs/
+public/runs/
+.remotion/
+dist/
+.DS_Store
+
+.next/
+*.tsbuildinfo
+
+# Generated voice samples (apps/web); regenerate with npm run voice-sample
+apps/web/voice-samples/
+
+# Local HTTPS development certificate (scripts/dev.mjs)
+apps/web/certificates/
+# Local media tunnel origin (scripts/media-tunnel.mjs)
+apps/web/.runtime/

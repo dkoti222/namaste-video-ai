@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-01",
+  "runtime": "Node 24.21.0",
+  "checks": [
+    {
+      "route": "/",
+      "expected": 200,
+      "actual": 200
+    },
+    {
+      "route": "/foundation",
+      "expected": 200,
+      "actual": 200
+    },
+    {
+      "route": "/does-not-exist",
+      "expected": 404,
+      "actual": 404
+    },
+    {
+      "route": "/.env.local",
+      "expected": 404,
+      "actual": 404
+    },
+    {
+      "route": "/runs/binary-search-reviewed/output.mp4",
+      "expected": 404,
+      "actual": 404
+    }
+  ],
+  "noindex": true
+}
