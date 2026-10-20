@@ -114,3 +114,4 @@ npm run pipeline -- edit-plan --from my-video --run edited-video --plan-file rev
 This validates an edited plan and carries compatible audio into a new run without altering the source export.
 
 The integration checks in `scripts/verify-recovery.ts` and `scripts/verify-failure-exit.ts` use the existing RAM output and fixed, single-use destination run IDs. They refuse to overwrite existing runs. They guard against provider requests, inject a missing-browser failure, and check cache reuse, lock release, process exit, and recovery. Reports are saved under `runs/ram-storage-recovery/` and `runs/renderer-exit-check/`.
+
